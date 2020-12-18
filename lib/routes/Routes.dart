@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:helloworld/tabs/MyTabs.dart';
-import 'package:helloworld/routes/LoginPage.dart';
-import 'package:helloworld/routes/RegisterPage.dart';
-import 'package:helloworld/routes/AppBarPage.dart';
-import 'package:helloworld/routes/TabControllerPage.dart';
-import 'package:helloworld/routes/UserPage.dart';
-import 'package:helloworld/routes/ButtonPage.dart';
-import 'package:helloworld/routes/DateTimePage.dart';
-import 'package:helloworld/routes/DialogPage.dart';
-import 'package:helloworld/routes/DioPage.dart';
+import 'package:helloworld/routes/pages/LoginPage.dart';
+import 'package:helloworld/routes/pages/RegisterPage.dart';
+import 'package:helloworld/routes/pages/AppBarPage.dart';
+import 'package:helloworld/routes/pages/TabControllerPage.dart';
+import 'package:helloworld/routes/pages/UserPage.dart';
+import 'package:helloworld/routes/pages/ButtonPage.dart';
+import 'package:helloworld/routes/pages/DateTimePage.dart';
+import 'package:helloworld/routes/pages/DialogPage.dart';
+import 'package:helloworld/routes/pages/DioPage.dart';
 
 // 定义命名路由
 final _routes = {

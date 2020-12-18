@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/MyIcon.dart';
-import 'package:helloworld/MyRaisedButton.dart';
+import 'package:helloworld/components/MyIcon.dart';
+import 'package:helloworld/components/MyRaisedButton.dart';
 
 /// 布局子组件Padding、Expanding、Row、Column、SizedBox、Wrap的使用
 

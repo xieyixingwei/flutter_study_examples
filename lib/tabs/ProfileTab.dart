@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatefulWidget {
-  SettingsPage({Key key}) : super(key: key);
+class ProfileTab extends StatefulWidget {
+  ProfileTab({Key key}) : super(key: key);
 
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _ProfileTabState createState() => _ProfileTabState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
     // Scaffold要放置在DefaultTabController内部

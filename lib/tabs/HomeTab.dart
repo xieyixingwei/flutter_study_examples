@@ -11,17 +11,17 @@ import 'package:helloworld/MyAspectRatio.dart';
 import 'package:helloworld/MyCard.dart';
 import 'package:helloworld/MyStatefulWidget.dart';
 */
-import '../routes/SearchPage.dart';
-import 'package:helloworld/routes/FormPage.dart';
+import '../routes/pages/SearchPage.dart';
+import 'package:helloworld/routes/pages/FormPage.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+class HomeTab extends StatefulWidget {
+  HomeTab({Key key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeTabState createState() => _HomeTabState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -37,46 +37,6 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) => SearchPage(),
                 )
               );
-            },
-            color: Theme.of(context).accentColor,
-            textTheme: ButtonTextTheme.primary,
-          ),
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("登录"),
-            onPressed: () {
-              // 基础路由跳转
-              Navigator.pushNamed(context, "/login");
-            },
-            color: Theme.of(context).accentColor,
-            textTheme: ButtonTextTheme.primary,
-          ),
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("使用DefaultTabController和Scaffold实现顶部tab页面切换"),
-            onPressed: () {
-              // 基础路由跳转
-              Navigator.pushNamed(context, "/appbarpage");
-            },
-            color: Theme.of(context).accentColor,
-            textTheme: ButtonTextTheme.primary,
-          ),
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("使用TabController和Scaffold实现顶部tab页面切换"),
-            onPressed: () {
-              // 基础路由跳转
-              Navigator.pushNamed(context, "/tabbarpage");
-            },
-            color: Theme.of(context).accentColor,
-            textTheme: ButtonTextTheme.primary,
-          ),
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("按钮组件演示"),
-            onPressed: () {
-              // 基础路由跳转
-              Navigator.pushNamed(context, "/buttonpage");
             },
             color: Theme.of(context).accentColor,
             textTheme: ButtonTextTheme.primary,

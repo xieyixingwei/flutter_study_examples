@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:helloworld/tabs/HomePage.dart';
-import 'package:helloworld/tabs/CategoryPage.dart';
-import 'package:helloworld/tabs/SettingsPage.dart';
+import 'package:helloworld/tabs/HomeTab.dart';
+import 'package:helloworld/tabs/ExampleTab.dart';
+import 'package:helloworld/tabs/CategoryTab.dart';
+import 'package:helloworld/tabs/ProfileTab.dart';
 
 class MyTabs extends StatefulWidget {
   final index;
@@ -14,10 +15,11 @@ class MyTabs extends StatefulWidget {
 
 class _MyTabsState extends State<MyTabs> {
   int _currentIndex = 0;
-  List<Widget> _pages = [
-    HomePage(),
-    CategoryPage(),
-    SettingsPage(),
+  List<Widget> _tabs = [
+    HomeTab(),
+    ExampleTab(),
+    CategoryTab(),
+    ProfileTab(),
   ];
 
   _MyTabsState({int index}) : this._currentIndex = index;
@@ -26,7 +28,7 @@ class _MyTabsState extends State<MyTabs> {
   Widget build(BuildContext context) {
     return Scaffold(
               appBar: AppBar(title: Text("Flutter Demo")),
-              body: this._pages[this._currentIndex],
+              body: this._tabs[this._currentIndex],
               floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
               floatingActionButton: Container(
                 height: 80,
@@ -114,6 +116,8 @@ class _MyTabsState extends State<MyTabs> {
               bottomNavigationBar: BottomNavigationBar(
                 currentIndex: this._currentIndex,
                 iconSize: 20,
+                selectedItemColor: Colors.yellow,
+                unselectedItemColor: Colors.blue,
                 onTap: (int index) {
                   print(index);
                   setState(() {
@@ -123,19 +127,20 @@ class _MyTabsState extends State<MyTabs> {
                 items: [
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home),
-                    title: Text("首页"),
+                    title: Text("首页", style: TextStyle( color: Colors.blue),),
                   ),
-                  //BottomNavigationBarItem(
-                  //  icon: Icon(Icons.home),
-                  //  title: Text("AppBar"),
-                  //),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.apps),
+                    title: Text("示例", style: TextStyle( color: Colors.blue),),
+                    backgroundColor: Colors.green,
+                  ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.category),
-                    title: Text("分类", style: TextStyle( fontSize: 12),),
+                    title: Text("组件", style: TextStyle( fontSize: 12, color: Colors.blue),),
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.settings),
-                    title: Text("设置"),
+                    title: Text("我的", style: TextStyle( color: Colors.blue),),
                   ),
                 ],
               ),

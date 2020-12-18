@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/MyIcon.dart';
+import 'package:helloworld/components/MyIcon.dart';
 
 /// 层叠容器组件 Stack的使用
 class MyStackA extends StatelessWidget {
