@@ -66,3 +66,62 @@ class _MyStatefulWidgetBState extends State<MyStatefulWidgetB> {
     );
   }
 }
+
+
+class StatefulWidgetShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const StatefulWidgetShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+class StatefulWidgetPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "有状态组件 1",
+      "widget": MyStatefulWidgetA(),
+    },
+    {
+      "title": "有状态组件 2",
+      "widget": MyStatefulWidgetB(),
+    },
+  ];
+  StatefulWidgetPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return StatefulWidgetShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("StatefulWidget 有状态组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

@@ -95,3 +95,62 @@ class MyCardB extends StatelessWidget {
     );
   }
 }
+
+
+class CardShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const CardShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+class CardPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "Card 卡片组件的使用",
+      "widget": MyCardA(),
+    },
+    {
+      "title": "CircleAvatar 组件的使用",
+      "widget": MyCardB(),
+    },
+  ];
+  CardPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return CardShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Card 和 CircleAvatar 组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

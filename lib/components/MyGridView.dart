@@ -128,3 +128,65 @@ class MyGridViewC extends StatelessWidget {
     );
   }
 }
+
+class GridViewShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const GridViewShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+class GridViewPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "网格布局组件 GridView的基本使用",
+      "widget": MyGridViewA(),
+    },
+    {
+      "title": "GridView 动态获取组件布局",
+      "widget": MyGridViewB(),
+    },
+    {
+      "title": "GridView.builder的使用",
+      "widget": MyGridViewC(),
+    },
+  ];
+  GridViewPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return GridViewShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("GridView Widget 组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

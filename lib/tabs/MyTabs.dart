@@ -127,7 +127,7 @@ class _MyTabsState extends State<MyTabs> {
                 items: [
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home),
-                    title: Text("首页", style: TextStyle( color: Colors.blue),),
+                    title: Text("基础Widget组件的使用", style: TextStyle( color: Colors.blue),),
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.apps),

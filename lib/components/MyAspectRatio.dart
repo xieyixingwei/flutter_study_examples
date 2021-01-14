@@ -17,3 +17,16 @@ class MyAspectRatioA extends StatelessWidget {
     );
   }
 }
+
+
+class AspectRatioPage extends StatelessWidget {
+  const AspectRatioPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("AspectRatio 组件演示")),
+      body: MyAspectRatioA()
+    );
+  }
+}

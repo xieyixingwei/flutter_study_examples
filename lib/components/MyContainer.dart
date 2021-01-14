@@ -25,3 +25,16 @@ class MyContainer extends StatelessWidget {
     );
   }
 }
+
+
+class ContainerPage extends StatelessWidget {
+  const ContainerPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Container Widget 组件演示")),
+      body: MyContainer()
+    );
+  }
+}

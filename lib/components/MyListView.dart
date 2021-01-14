@@ -128,3 +128,70 @@ class MyListViewD extends StatelessWidget {
     );
   }
 }
+
+
+class ListViewShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const ListViewShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+class ListViewPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "ListView 基本使用",
+      "widget": MyListViewA(),
+    },
+    {
+      "title": "ListView 水平列表",
+      "widget": MyListViewB(),
+    },
+    {
+      "title": "动态列表实现方式1",
+      "widget": MyListViewC(),
+    },
+    {
+      "title": "动态列表实现方式2",
+      "widget": MyListViewD(),
+    },
+  ];
+  ListViewPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ListViewShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("ListView Widget 组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

@@ -5,8 +5,8 @@ class MyImageNetwork extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            width: 300,
-            height: 500,
+            width: 200,
+            height: 300,
             decoration: BoxDecoration(
               color: Colors.yellow
             ),
@@ -37,8 +37,8 @@ class MyImageAsset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            width: 300,
-            height: 500,
+            width: 200,
+            height: 300,
             child: Image.asset(
                 "images/2.0x/a.jpg",
                 height: 100,
@@ -82,6 +82,32 @@ class MyImageRadiusB extends StatelessWidget {
                 fit: BoxFit.cover
               ),
             ),
+    );
+  }
+}
+
+
+class ImagePage extends StatelessWidget {
+  const ImagePage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("图片 Widget 组件演示")),
+      body: Container(
+        child: Column(
+          children: [
+            Text("显示网络图片:"),
+            MyImageNetwork(),
+            Text("显示本地图片:"),
+            MyImageAsset(),
+            Text("显示圆角图片(实现方式1):"),
+            MyImageRadiusA(),
+            Text("显示圆角图片(实现方式2):"),
+            MyImageRadiusB(),
+          ],
+        ),
+      )
     );
   }
 }

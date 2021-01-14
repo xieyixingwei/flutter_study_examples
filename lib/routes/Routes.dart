@@ -1,6 +1,19 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/MyAspectRatio.dart';
+import 'package:helloworld/components/MyCard.dart';
+import 'package:helloworld/components/MyContainer.dart';
+import 'package:helloworld/components/MyGridView.dart';
+import 'package:helloworld/components/MyImage.dart';
+import 'package:helloworld/components/MyLayoutComponent.dart';
+import 'package:helloworld/components/MyListView.dart';
+import 'package:helloworld/components/MyStack.dart';
+import 'package:helloworld/components/MyStatefulWidget.dart';
+import 'package:helloworld/components/MyText.dart';
 
 import 'package:helloworld/tabs/MyTabs.dart';
+import 'package:helloworld/routes/pages/ChildPage.dart';
 import 'package:helloworld/routes/pages/LoginPage.dart';
 import 'package:helloworld/routes/pages/RegisterPage.dart';
 import 'package:helloworld/routes/pages/AppBarPage.dart';
@@ -14,12 +27,25 @@ import 'package:helloworld/routes/pages/DioPage.dart';
 // 定义命名路由
 final _routes = {
   "/": (context) => MyTabs(),
+  "/childc": (context) => ChildPageC(),
+  "/Text": (context) => TextPage(),
+  "/Container": (context) => ContainerPage(),
+  "/Image": (context) => ImagePage(),
+  "/ListView": (context) => ListViewPage(),
+  "/GridView": (context) => GridViewPage(),
+  "/layout": (context) => LayoutPage(),
+  "/Stack": (context) => StackPage(),
+  "/AspectRatio": (context) => AspectRatioPage(),
+  "/Card": (context) => CardPage(),
+  "/StatefulWidget": (context) => StatefulWidgetPage(),
+  "/buttonpage": (context) => ButtonPage(),
+
   "/login": (context) => LoginPage(),
   "/register": (context, {arguments}) => RegisterPage(arguments: arguments),
   "/appbarpage": (context) => AppBarPage(),
   "/tabbarpage": (context) => TabBarPage(),
   "/user": (context) => UserPage(),
-  "/buttonpage": (context) => ButtonPage(),
+
   "/datetimepage": (context) => DateTimePage(),
   "/dialogpage": (context) => DialogPage(),
   "/diopage": (context) => DioPage(),

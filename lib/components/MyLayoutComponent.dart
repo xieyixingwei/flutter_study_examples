@@ -212,3 +212,79 @@ class MyLayoutComponentF extends StatelessWidget {
     );
   }
 }
+
+
+class LayoutShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const LayoutShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+
+class LayoutPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "Padding 组件的使用",
+      "widget": MyLayoutComponentA(),
+    },
+    {
+      "title": "Row 组件的使用",
+      "widget": MyLayoutComponentB(),
+    },
+    {
+      "title": "Column 组件的使用",
+      "widget": MyLayoutComponentC(),
+    },
+    {
+      "title": "Expanded 组件的使用",
+      "widget": MyLayoutComponentD(),
+    },
+    {
+      "title": "综合使用 Row Column Expanded SizedBox",
+      "widget": MyLayoutComponentE(),
+    },
+    {
+      "title": "Wrap 组件的使用",
+      "widget": MyLayoutComponentF(),
+    },
+  ];
+  LayoutPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LayoutShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("布局 组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

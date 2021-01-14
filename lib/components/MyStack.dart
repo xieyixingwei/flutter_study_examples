@@ -77,3 +77,66 @@ class MyStackC extends StatelessWidget {
     );
   }
 }
+
+
+class StackShowPage extends StatelessWidget {
+  final String _title;
+  final Widget _widget;
+  const StackShowPage({String title, Widget widget, Key key})
+    : this._title = title,
+      this._widget = widget,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(this._title)),
+      body: this._widget
+    );
+  }
+}
+
+class StackPage extends StatelessWidget {
+  final List _configs = [
+    {
+      "title": "层叠容器组件 Stack的使用",
+      "widget": MyStackA(),
+    },
+    {
+      "title": "使用Align组件控制Stack中的子组件的位置",
+      "widget": MyStackB(),
+    },
+    {
+      "title": "使用Positioned组件控制Stack中的子组件的位置",
+      "widget": MyStackC(),
+    },
+  ];
+  StackPage({Key key}) : super(key: key);
+
+  List<Widget> _items(context) {
+    var items = this._configs.map((e) => RaisedButton(
+           child: Text(e["title"]),
+           onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return StackShowPage(title:e["title"], widget:e["widget"]);
+                      },
+                    )
+                  );
+           },
+           color: Theme.of(context).accentColor,
+         ));
+      return items.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Stack 层叠容器组件演示")),
+      body: Column(
+        children: this._items(context),
+      )
+    );
+  }
+}

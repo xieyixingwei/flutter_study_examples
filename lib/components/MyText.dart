@@ -24,3 +24,16 @@ class MyText extends StatelessWidget {
     );
   }
 }
+
+
+class TextPage extends StatelessWidget {
+  const TextPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Text Widget 组件演示")),
+      body: MyText()
+    );
+  }
+}
