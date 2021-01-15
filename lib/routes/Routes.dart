@@ -11,6 +11,9 @@ import 'package:helloworld/components/MyListView.dart';
 import 'package:helloworld/components/MyStack.dart';
 import 'package:helloworld/components/MyStatefulWidget.dart';
 import 'package:helloworld/components/MyText.dart';
+import 'package:helloworld/components/MyButtons.dart';
+import 'package:helloworld/routes/pages/BaseWidgetPage.dart';
+import 'package:helloworld/routes/pages/HomePage.dart';
 
 import 'package:helloworld/tabs/MyTabs.dart';
 import 'package:helloworld/routes/pages/ChildPage.dart';
@@ -19,14 +22,15 @@ import 'package:helloworld/routes/pages/RegisterPage.dart';
 import 'package:helloworld/routes/pages/AppBarPage.dart';
 import 'package:helloworld/routes/pages/TabControllerPage.dart';
 import 'package:helloworld/routes/pages/UserPage.dart';
-import 'package:helloworld/routes/pages/ButtonPage.dart';
+
 import 'package:helloworld/routes/pages/DateTimePage.dart';
 import 'package:helloworld/routes/pages/DialogPage.dart';
 import 'package:helloworld/routes/pages/DioPage.dart';
 
 // 定义命名路由
 final _routes = {
-  "/": (context) => MyTabs(),
+  "/": (context) => HomePage(),//MyTabs(),
+  "/BaseWidgetPage": (context) => BaseWidgetPage(),
   "/childc": (context) => ChildPageC(),
   "/Text": (context) => TextPage(),
   "/Container": (context) => ContainerPage(),
