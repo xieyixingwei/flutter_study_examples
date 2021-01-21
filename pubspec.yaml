@@ -60,6 +60,12 @@ flutter:
     - images/2.0x/a.jpg
     - images/3.0x/a.jpg
     - images/4.0x/a.jpg
+    - images/fluter.PNG
+    - lib/widgets/Layout/images/Container.PNG
+    - lib/widgets/Layout/images/Column.PNG
+    - lib/widgets/Layout/images/Row.PNG
+    - lib/widgets/Image/images/Image.PNG
+    - lib/widgets/Text/images/Text.PNG
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

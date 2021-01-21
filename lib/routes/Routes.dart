@@ -1,58 +1,53 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/MyAspectRatio.dart';
-import 'package:helloworld/components/MyCard.dart';
-import 'package:helloworld/components/MyContainer.dart';
-import 'package:helloworld/components/MyGridView.dart';
-import 'package:helloworld/components/MyImage.dart';
-import 'package:helloworld/components/MyLayoutComponent.dart';
-import 'package:helloworld/components/MyListView.dart';
-import 'package:helloworld/components/MyStack.dart';
-import 'package:helloworld/components/MyStatefulWidget.dart';
-import 'package:helloworld/components/MyText.dart';
-import 'package:helloworld/components/MyButtons.dart';
-import 'package:helloworld/routes/pages/BaseWidgetPage.dart';
-import 'package:helloworld/routes/pages/HomePage.dart';
+import 'package:helloworld/apps/dictionary/DictionaryApp.dart';
+import 'package:helloworld/apps/wechat/WechatApp.dart';
 
-import 'package:helloworld/tabs/MyTabs.dart';
-import 'package:helloworld/routes/pages/ChildPage.dart';
-import 'package:helloworld/routes/pages/LoginPage.dart';
-import 'package:helloworld/routes/pages/RegisterPage.dart';
-import 'package:helloworld/routes/pages/AppBarPage.dart';
-import 'package:helloworld/routes/pages/TabControllerPage.dart';
-import 'package:helloworld/routes/pages/UserPage.dart';
+import 'package:helloworld/widgets/Button/page.dart';
+import 'package:helloworld/widgets/Card/page.dart';
+import 'package:helloworld/widgets/DateTime/page.dart';
+import 'package:helloworld/widgets/Dialog/page.dart';
+import 'package:helloworld/widgets/Form/page.dart';
+import 'package:helloworld/widgets/Http/page.dart';
+import 'package:helloworld/widgets/Image/page.dart';
+import 'package:helloworld/widgets/Layout/page.dart';
+import 'package:helloworld/widgets/ListView/page.dart';
+import 'package:helloworld/widgets/Meterial/page.dart';
+import 'package:helloworld/widgets/StatefulWidget/page.dart';
+import 'package:helloworld/widgets/TabBar/page.dart';
+import 'package:helloworld/widgets/Text/page.dart';
 
-import 'package:helloworld/routes/pages/DateTimePage.dart';
-import 'package:helloworld/routes/pages/DialogPage.dart';
-import 'package:helloworld/routes/pages/DioPage.dart';
+import 'package:helloworld/routes/pages/R01_BaseWidget.dart';
+import 'package:helloworld/routes/pages/Home.dart';
+
 
 // 定义命名路由
 final _routes = {
   "/": (context) => HomePage(),//MyTabs(),
   "/BaseWidgetPage": (context) => BaseWidgetPage(),
-  "/childc": (context) => ChildPageC(),
+
   "/Text": (context) => TextPage(),
-  "/Container": (context) => ContainerPage(),
   "/Image": (context) => ImagePage(),
   "/ListView": (context) => ListViewPage(),
-  "/GridView": (context) => GridViewPage(),
   "/layout": (context) => LayoutPage(),
-  "/Stack": (context) => StackPage(),
-  "/AspectRatio": (context) => AspectRatioPage(),
   "/Card": (context) => CardPage(),
+  "/button": (context) => ButtonPage(),
   "/StatefulWidget": (context) => StatefulWidgetPage(),
-  "/buttonpage": (context) => ButtonPage(),
+  "/dialog": (context) => DialogPage(),
+  "/datetime": (context) => DateTimePage(),
+  "/form": (context) => FormPage(),
+  "/meterial": (context) => MeterialPage(),
+  "/tabbar": (context) => TabBarPage(),
+  "/httppage": (context) => HttpPage(),
 
+  "/wechat": (context) => WechatApp(),
+  "/dictionary": (context) => DictionaryApp(),
+  /*
+  "/childc": (context) => ChildPageC(),
   "/login": (context) => LoginPage(),
   "/register": (context, {arguments}) => RegisterPage(arguments: arguments),
-  "/appbarpage": (context) => AppBarPage(),
-  "/tabbarpage": (context) => TabBarPage(),
-  "/user": (context) => UserPage(),
-
-  "/datetimepage": (context) => DateTimePage(),
-  "/dialogpage": (context) => DialogPage(),
-  "/diopage": (context) => DioPage(),
+  "/user": (context) => UserPage(),*/
 };
 
 // 实现命名路由传参的函数
