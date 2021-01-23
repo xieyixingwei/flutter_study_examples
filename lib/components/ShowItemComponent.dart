@@ -33,7 +33,7 @@ class _ShowItemComponent extends State<ShowItemComponent> {
 
   List<Widget> _items(BuildContext context) {
     var items = _configs.map((e) => ImageCard(
-      imagesrc: e["image"] != null ? e["image"] : "",
+      image: e["image"],
       title: e["title"],
       subtitle: e["subtitle"],
       route: e["route"],

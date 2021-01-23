@@ -40,6 +40,12 @@ class LayoutPage extends StatelessWidget {
       "widget": ColumnExampleA(),
     },
     {
+      "image": ColumnExampleB.image ?? "lib/widgets/Layout/images/Column.PNG",
+      "title": ColumnExampleB.title,
+      "subtitle":ColumnExampleB.subtitle,
+      "widget": ColumnExampleB(),
+    },
+    {
       "image":"images/fluter.PNG",
       "title": "Expanded 组件的使用",
       "subtitle":"",

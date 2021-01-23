@@ -31,3 +31,33 @@ class ColumnExampleA extends StatelessWidget {
     );
   }
 }
+
+
+class ColumnExampleB extends StatelessWidget {
+  static String image = null;
+  static String title = "Column和Row互相嵌套";
+  static String subtitle = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Row(
+          children: [
+            Text("AAAAAAAA"),
+            Text("BBBBBBBB"),
+            Column(
+              children: [
+                Text("CCCCCCCC"),
+                Text("DDDDDDDD"),
+              ],
+            ),
+            Text("EEEEEEE"),
+          ],
+        ),
+      ],
+    );
+  }
+}

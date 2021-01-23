@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ImageCard extends StatelessWidget {
-  final String _imagesrc;
+  final String _image;
   final String _title;
   final String _route;
   final String _subtitle;
   final Function _onpress;
 
-  ImageCard({String imagesrc="", String title, String subtitle, String route="", Function onpress}) 
-    : this._imagesrc = imagesrc,
+  ImageCard({String image, String title, String subtitle, String route="", Function onpress}) 
+    : this._image = image,
       this._title = title,
       this._subtitle = subtitle,
       this._route = route,
@@ -29,8 +29,8 @@ class ImageCard extends StatelessWidget {
                     },
                   );
     return Container(
-      width: 280,
-      height: this._imagesrc != "" ? 340 : 200,
+      width: 260,
+      height: this._image != null ? 340 : 200,
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: BoxDecoration(
@@ -48,11 +48,11 @@ class ImageCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          this._imagesrc != "" ? Center(
+          this._image != null ? Center(
             child:Container(
-              height:200,
+              height:160,
               width:200,
-              child:Image.asset(this._imagesrc, fit: BoxFit.cover),
+              child:Image.asset(this._image, fit: BoxFit.cover),
               )
             ) : SizedBox(height: 20,),
           SizedBox(height: 20,),

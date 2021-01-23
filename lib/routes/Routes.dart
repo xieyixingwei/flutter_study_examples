@@ -3,6 +3,7 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:helloworld/apps/dictionary/DictionaryApp.dart';
 import 'package:helloworld/apps/wechat/WechatApp.dart';
+import 'package:helloworld/provider/page.dart';
 
 import 'package:helloworld/widgets/Button/page.dart';
 import 'package:helloworld/widgets/Card/page.dart';
@@ -43,6 +44,8 @@ final _routes = {
 
   "/wechat": (context) => WechatApp(),
   "/dictionary": (context) => DictionaryApp(),
+
+  "/provider": (context) => ProviderPage(),
   /*
   "/childc": (context) => ChildPageC(),
   "/login": (context) => LoginPage(),

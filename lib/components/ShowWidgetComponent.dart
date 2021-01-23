@@ -37,7 +37,7 @@ class ShowWidgetComponent extends StatelessWidget {
 
   List<Widget> _items(context) {
     var items = this._configs.map((e) => ImageCard(
-           imagesrc: e["image"] != null ? e["image"] : "",
+           image: e["image"],
            title: e["title"],
            subtitle: e["subtitle"],
            onpress: () {

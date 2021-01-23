@@ -41,6 +41,11 @@ class _HomePageState extends State<HomePage> {
       "route":"/httppage",
     },
     {
+      "title":"Provider 管理状态",
+      "subtitle":"",
+      "route":"/provider",
+    },
+    {
       "title":"动画和Motion",
       "subtitle":"在您的应用中使用动画。查看Flutter中的动画总览",
       "route":"/InputPage",

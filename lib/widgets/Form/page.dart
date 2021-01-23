@@ -9,10 +9,28 @@ import './L04_Switch.dart';
 class FormPage extends StatelessWidget {
   final List _configs = [
     {
-      "image":"images/fluter.PNG",
-      "title": "TextField 组件的使用",
-      "subtitle":"",
+      "image":TextFieldExampleA.image ?? "images/fluter.PNG",
+      "title": TextFieldExampleA.title,
+      "subtitle":TextFieldExampleA.subtitle,
       "widget": TextFieldExampleA(),
+    },
+    {
+      "image":TextFieldExampleB.image ?? "images/fluter.PNG",
+      "title":TextFieldExampleB.title,
+      "subtitle":TextFieldExampleB.subtitle,
+      "widget": TextFieldExampleB(),
+    },
+    {
+      "image":TextFieldExampleC.image ?? "images/fluter.PNG",
+      "title":TextFieldExampleC.title,
+      "subtitle":TextFieldExampleC.subtitle,
+      "widget": TextFieldExampleC(),
+    },
+    {
+      "image":TextFieldExampleD.image ?? "images/fluter.PNG",
+      "title":TextFieldExampleD.title,
+      "subtitle":TextFieldExampleD.subtitle,
+      "widget": TextFieldExampleD(),
     },
     {
       "image":"images/fluter.PNG",
