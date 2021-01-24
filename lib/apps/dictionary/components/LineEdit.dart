@@ -2,20 +2,26 @@ import 'package:flutter/material.dart';
 
 
 class LineEdit extends StatelessWidget {
-  final String _init;
+  final String _data;
   final String _hintText;
   final int _flex;
   final double _width;
-  final Function(String) _enterPressed;
+  final Function _delete;
+  final Object _deleteObj;
+  final Function(String) _onSubmitted;
+  final Function(String) _onChanged;
   final TextEditingController _inputText = TextEditingController();
 
-  LineEdit({String init="", String hintText="", int flex=1, double width=0, Function(String) enterPressed})
-    : _init = init,
+  LineEdit({String data="", String hintText="", int flex=1, double width=0, Function delete, Object deleteObj, Function(String) onSubmitted, Function(String) onChanged})
+    : _data = data,
       _hintText = hintText,
       _flex = flex,
+      _delete = delete,
       _width = width,
-      _enterPressed = enterPressed {
-        _inputText.text = _init;
+      _deleteObj = deleteObj,
+      _onSubmitted = onSubmitted,
+      _onChanged = onChanged {
+        _inputText.text = _data;
       }
 
   _textFiled() {
@@ -27,19 +33,26 @@ class LineEdit extends StatelessWidget {
             controller: _inputText,
             decoration: InputDecoration(
               hintText: _hintText,
+              suffixIcon: _delete != null ? IconButton(
+                icon: Icon(Icons.clear,),
+                onPressed: () {
+                  if(_deleteObj != null) _delete(_deleteObj);
+                  else _delete(_data);
+                },
+              ) : null,
             ),
             onSubmitted: (value) {
-              if(_enterPressed != null) {
-                _enterPressed(value);
-              }
-              print(value);
+              if(_onSubmitted != null) _onSubmitted(value);
+            },
+            onChanged: (value) {
+              if(_onChanged != null) _onChanged(value);
             },
           );
   }
 
   @override
   Widget build(BuildContext context) {
-    print("----- LineEdit build ${_hintText}");
+    //print("----- LineEdit build ${_hintText}");
 
     return _width != 0 ? 
           SizedBox(

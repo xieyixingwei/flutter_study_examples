@@ -1,38 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:helloworld/apps/dictionary/store/store.dart';
 import 'package:helloworld/apps/dictionary/components/Tag.dart';
 import 'package:helloworld/apps/dictionary/components/LineEdit.dart';
 
 
 class LineEditAdder extends StatelessWidget {
+  final List<String> _data;
   final String _label;
-  final List<String> _values;
-  final Function(String) _enterPressed;
-  final Function(Object, String) _delete;
+  final double _width;
 
-  LineEditAdder({Key key, String label, List<String> values, Function(String) enterPressed, Function(Object, String) delete})
-    : _label = label,
-      _values = values,
-      _enterPressed = enterPressed,
-      _delete = delete,
+  LineEditAdder({Key key, List<String> data, String label, double width=100})
+    : _data = data,
+      _label = label,
+      _width = width,
      super(key:key);
 
+  _children(BuildContext context) {
+    var delete = (String value) {
+      _data.remove(value);
+      Provider.of<Store>(context, listen:false).updateUI();
+    };
 
-  @override
-  Widget build(BuildContext context) {
-    print("----- LineEditAdder build ${_label}");
+    var add = (String value) {
+      _data.add(value);
+      Provider.of<Store>(context, listen:false).updateUI();
+    };
 
     List<Widget> children = [];
     children.add(Text(_label,));
-    if(_values != null) {
-      _values.forEach((String val)=>children.add(Tag(title:val, delete:_delete,)));
+    if(_data != null) {
+      _data.forEach((String val)=>children.add(Tag(title:val, delete:delete,)));
     }
-    children.add(LineEdit(width: 100, enterPressed: _enterPressed,));
+    children.add(LineEdit(width: _width, onSubmitted:add));
 
+    return children;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    //print("----- LineEditAdder build ${_label}");
     return Wrap(
             spacing: 10,
             runSpacing: 10,
             crossAxisAlignment: WrapCrossAlignment.end,
-            children: children,
+            children: _children(context),
           );
   }
 }

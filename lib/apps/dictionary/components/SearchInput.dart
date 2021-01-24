@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class SearchInput extends StatelessWidget {
-  var _inputText = TextEditingController();
+  final TextEditingController _inputText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SearchInput extends StatelessWidget {
               iconSize: 38,
               icon: Icon(Icons.search),
               onPressed: () {
-                print("search ........");
+                //print("search ........");
                 print(_inputText.text);
               },
             ),

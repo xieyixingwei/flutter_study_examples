@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:helloworld/apps/dictionary/store/store.dart';
 
 
-class Selector extends StatelessWidget {
+class SelectorDialog extends StatelessWidget {
+  final List<String> _data;
+  final List<String> _options;
   final String _title;
   final Widget _icon;
   final String _tooltip;
-  final List<String> _options;
-  final Function(String) _enterPressed;
 
-  Selector({Key key, String title, Widget icon, String tooltip="", List<String> options, Function(String) enterPressed})
-    : _title = title,
+  SelectorDialog({Key key, List<String> data, List<String> options, String title, Widget icon, String tooltip=""})
+    : _data = data,
+      _options = options,
+      _title = title,
       _icon = icon,
       _tooltip = tooltip,
-      _options = options,
-      _enterPressed = enterPressed,
       super(key: key);
 
   void _simpleDialog(BuildContext context) async {
@@ -37,9 +39,8 @@ class Selector extends StatelessWidget {
       },
     );
 
-    if(_enterPressed != null) {
-      _enterPressed(res);
-    }
+    _data.add(res);
+    Provider.of<Store>(context, listen:false).updateUI();
   }
 
   @override

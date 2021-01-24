@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/apps/dictionary/components/SentenceAdder.dart';
+import 'package:helloworld/apps/dictionary/components/InputAdder.dart';
+import 'package:helloworld/apps/dictionary/components/PartOfSpeech.dart';
 import 'package:helloworld/apps/dictionary/components/TextEdit.dart';
 import 'package:provider/provider.dart';
 import 'package:helloworld/apps/dictionary/store/store.dart';
@@ -17,13 +18,6 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-  Map values = {
-    "type": "It is that ...",
-    "sentences": [
-      ["thank you", "谢谢你"],
-      ["fuck you", "爬远点"],
-    ]
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -32,50 +26,54 @@ class _EditPageState extends State<EditPage> {
       children:[
         Row(
           children: [
-            LineEdit(hintText:"单词", flex:2),
+            LineEdit(
+              data:Provider.of<Store>(context, listen:true).wordName,
+              hintText:"单词",
+              flex:2,
+              onChanged: (value) => Provider.of<Store>(context, listen:false).wordName = value
+              ),
             SizedBox(width: 20,),
-            LineEdit(hintText:"音标(美)", flex:1),
+            LineEdit(
+              data:Provider.of<Store>(context, listen:true).voiceUS,
+              hintText:"音标(美)", flex:1,
+              onChanged: (value)=>Provider.of<Store>(context, listen:false).voiceUS=value,
+              ),
             SizedBox(width: 20,),
-            LineEdit(hintText:"音标(英)", flex:1),
+            LineEdit(
+              data:Provider.of<Store>(context, listen:true).voiceUK,
+              hintText:"音标(英)", flex:1,
+              onChanged: (value)=>Provider.of<Store>(context, listen:false).voiceUK=value,
+              ),
           ],
         ),
         SizedBox(height: 15,),
         TagAdder(
+          data: Provider.of<Store>(context, listen:true).tags,
+          options: ["情态动词", "Be动词", "感官动词"],
           label: "Tags:",
           title: "添加Tag",
-          options: ["情态动词", "Be动词", "感官动词"],
-          values: Provider.of<Store>(context, listen:true).tags,
-          enterPressed: (value)=>Provider.of<Store>(context, listen:false).tagsAction(value: value),
-          delete: (Object obj, String value) =>Provider.of<Store>(context, listen:false).tagsAction(value:value, action:false),
         ),
-        /*
+
         SizedBox(height: 15,),
         LineEditAdder(
           label: "添加词根词缀:",
-          values: Provider.of<Store>(context, listen:true).etyma,
-          enterPressed: (value)=>Provider.of<Store>(context, listen:false).etymaAction(value: value),
-          delete: (Object obj, String value) =>Provider.of<Store>(context, listen:false).etymaAction(value:value, action:false),
+          data: Provider.of<Store>(context, listen:true).etyma,
           ),
         SizedBox(height: 15,),
         LineEditAdder(
           label: "添加变型单词:",
-          values: Provider.of<Store>(context, listen:true).morph,
-          enterPressed: (value)=>Provider.of<Store>(context, listen:false).morphAction(value: value),
-          delete: (Object obj, String value) =>Provider.of<Store>(context, listen:false).morphAction(value:value, action:false),
+          data: Provider.of<Store>(context, listen:true).morph,
           ),
+
         SizedBox(height: 15,),
         LineEditAdder(
           label: "添加近义词:",
-          values: Provider.of<Store>(context, listen:true).synonym,
-          enterPressed: (value)=>Provider.of<Store>(context, listen:false).synonymAction(value: value),
-          delete: (Object obj, String value) =>Provider.of<Store>(context, listen:false).synonymAction(value:value, action:false),
+          data: Provider.of<Store>(context, listen:true).synonym,
           ), 
         SizedBox(height: 15,),
         LineEditAdder(
           label: "添加反义词:",
-          values: Provider.of<Store>(context, listen:true).antonym,
-          enterPressed: (value)=>Provider.of<Store>(context, listen:false).antonymAction(value: value),
-          delete: (Object obj, String value) =>Provider.of<Store>(context, listen:false).antonymAction(value:value, action:false),
+          data: Provider.of<Store>(context, listen:true).antonym,
           ),
         SizedBox(height: 40,),
         Row(
@@ -84,8 +82,8 @@ class _EditPageState extends State<EditPage> {
             Text("词源(markdown):"),
             SizedBox(width: 10,),
             TextEdit(
-              init: Provider.of<Store>(context, listen:true).origin,
-              enterPressed: (value)=>Provider.of<Store>(context, listen:false).originAction(value: value),
+              data: Provider.of<Store>(context, listen:true).origin,
+              onChanged: (value)=>Provider.of<Store>(context, listen:false).origin = value,
             )
           ],
         ),
@@ -96,13 +94,47 @@ class _EditPageState extends State<EditPage> {
             Text("速记(markdown):"),
             SizedBox(width: 10,),
             TextEdit(
-              init: Provider.of<Store>(context, listen:true).shorthand,
-              enterPressed: (value)=>Provider.of<Store>(context, listen:false).shorthandAction(value: value),
+              data: Provider.of<Store>(context, listen:true).shorthand,
+              onChanged: (value)=>Provider.of<Store>(context, listen:false).shorthand = value,
             )
           ],
-        ),*/
+        ),
         SizedBox(height: 40,),
-        SentenceAdder(values: values,),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("词性:"),
+            SizedBox(width: 10,),
+            PartOfSpeech(
+              data: Provider.of<Store>(context, listen:true).partOfSpeech,
+              options: Provider.of<Store>(context, listen:false).partOfSpeechOptions,
+            ),
+          ],
+        ),
+        SizedBox(height: 40,),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("常用句型:"),
+            SizedBox(width: 10,),
+            InputAdder(
+              data: Provider.of<Store>(context, listen:true).sentencePattern,
+            ),
+          ],
+        ),
+        SizedBox(height: 40,),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("词汇搭配:"),
+            SizedBox(width: 10,),
+            InputAdder(
+              data: Provider.of<Store>(context, listen:true).wordCollocation,
+              options: Provider.of<Store>(context, listen:false).partOfSpeechOptions,
+            ),
+          ],
+        ),
+        
       ],
     );
   }

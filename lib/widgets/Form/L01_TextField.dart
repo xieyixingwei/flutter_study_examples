@@ -171,3 +171,33 @@ class TextFieldExampleD extends StatelessWidget {
             );
   }
 }
+
+
+class TextFieldExampleE extends StatelessWidget {
+  static String image = null;
+  static String title = "Row(IntrinsicWidth(TextField)) 的使用";
+  static String subtitle = "";
+
+  _textField() => TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                    ),
+                  );
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+            body: Row(
+                children: [
+                      IntrinsicWidth(
+                        child: _textField(),
+                      ),
+                      SizedBox(width: 50,),
+                      IntrinsicWidth(
+                        child: _textField(),
+                      ),
+                ],
+              ),
+            );
+  }
+}

@@ -33,6 +33,12 @@ class FormPage extends StatelessWidget {
       "widget": TextFieldExampleD(),
     },
     {
+      "image":TextFieldExampleE.image ?? "images/fluter.PNG",
+      "title":TextFieldExampleE.title,
+      "subtitle":TextFieldExampleE.subtitle,
+      "widget": TextFieldExampleE(),
+    },
+    {
       "image":"images/fluter.PNG",
       "title": "CheckBox CheckboxListTile 组件的使用",
       "subtitle":"",

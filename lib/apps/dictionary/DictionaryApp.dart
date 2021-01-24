@@ -27,7 +27,15 @@ class _DictionaryApp extends State<DictionaryApp> {
   _DictionaryApp({int index}) : this._currentIndex = index;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
+  
+  @override
   Widget build(BuildContext context) {
+    // print(MediaQuery.of(context).size.toString());
     return ChangeNotifierProvider( // 2. 使用Provider包裹Widget
         create: (_) => Store(), // 返回要共享的数据Model
         child: Scaffold(
