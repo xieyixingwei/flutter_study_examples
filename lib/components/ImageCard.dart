@@ -32,7 +32,7 @@ class ImageCard extends StatelessWidget {
       width: 260,
       height: this._image != null ? 340 : 200,
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-      margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
         border: Border(
           top:BorderSide(color: Color.fromRGBO(236,236,236, 1), width:1,),

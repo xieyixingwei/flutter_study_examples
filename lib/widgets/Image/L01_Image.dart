@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// 显示网络图片
-class NetworkImageExample extends StatelessWidget {
+class NetworkImageExample extends ShowPage {
+  final String title = "Image 显示网络图片";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +36,9 @@ class NetworkImageExample extends StatelessWidget {
 ///      - images/4.0x/a.jpg
 /// 4. 更新pubspec.yaml配置文件后，需要重新打开工程编译，不然会提示找不到图片
 /// 
-class LocalImageExample extends StatelessWidget {
+class LocalImageExample extends ShowPage {
+  final String title = "Image 显示本地图片";
+
   @override
   Widget build(BuildContext context) {
     return Container(

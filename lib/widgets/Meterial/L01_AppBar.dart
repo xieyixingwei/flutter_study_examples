@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class AppBarExampleA extends StatefulWidget {
-  AppBarExampleA({Key key}) : super(key: key);
-
+class AppBarExampleA extends ShowPage {
   @override
-  _AppBarExampleA createState() => _AppBarExampleA();
-}
+  final String title = "TabBar DefaultTabController";
+  @override
+  final String subtitle = "Scaffold要放置在DefaultTabController内部";
 
-class _AppBarExampleA extends State<AppBarExampleA> {
   @override
   Widget build(BuildContext context) {
     // Scaffold要放置在DefaultTabController内部

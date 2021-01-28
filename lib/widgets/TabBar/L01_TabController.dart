@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 // 使用TabController实现TabBar必须继承于StatefulWidget
 
-class TabBarExampleA extends StatefulWidget {
+class TabBarExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "TabBar TabBarView TabController";
+  final String subtitle = "必须在StatefulWidget中使用TabController";
+
   TabBarExampleA({Key key}) : super(key: key);
 
   @override
@@ -81,3 +86,4 @@ class _TabBarExampleA extends State<TabBarExampleA>
             );
   }
 }
+

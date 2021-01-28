@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// 卡片组件 Card的使用
-class CardExampleA extends StatelessWidget {
+class CardExampleA extends ShowPage {
+  final String title = "Card";
+  final String subtitle = "卡片组件";
+
   @override
   Widget build(BuildContext context) {
     return ListView(

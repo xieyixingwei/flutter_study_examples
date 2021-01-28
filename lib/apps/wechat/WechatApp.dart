@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 import './TabHome.dart';
 import './TabContacts.dart';
 import './TabDiscover.dart';
 import './TabProfile.dart';
 
 
-class WechatApp extends StatefulWidget {
+class WechatApp extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "微信APP";
+  final String subtitle = "模拟微信APP";
   final index;
   WechatApp({Key key, this.index=0}) : super(key: key);
 

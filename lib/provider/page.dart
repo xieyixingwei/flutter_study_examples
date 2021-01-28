@@ -60,30 +60,13 @@ Provider 为我们提供了一些不同类型的Provider:
     值得注意的是，这个操作的复杂度为O(1)。 实际上，这并不会在控件树中游走。
 */
 
-class ProviderPage extends StatelessWidget {
-  final List _configs = [
-    {
-      "image":"images/fluter.PNG",
-      "title": "Provider Example A",
-      "subtitle":"Provider的使用",
-      "widget": ProviderExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "ChangeNotifierProvider Example A",
-      "subtitle":"将ChangeNotifierProvider置于顶层Widget中",
-      "widget": ChangeNotifierProviderExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "ChangeNotifierProvider Example B",
-      "subtitle":"将ChangeNotifierProvider置于Widget内部",
-      "widget": ChangeNotifierProviderExampleB(),
-    },
-  ];
+class ProviderPage extends ShowPage {
+  final String title = "Provider";
+  final String subtitle = "状态管理";
 
-  @override
-  Widget build(BuildContext context) {
-    return ShowWidgetComponent(title: "ChangeNotifierProvider 的使用", configs:_configs);
-  }
+  final List<ShowPage> items = [
+    ProviderExampleA(),
+    ChangeNotifierProviderExampleA(),
+    ChangeNotifierProviderExampleB(),
+  ];
 }

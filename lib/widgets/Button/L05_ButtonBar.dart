@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class ButtonBarExampleA extends StatelessWidget {
+class ButtonBarExampleA extends ShowPage {
+  final String title = "ButtonBar";
   @override
   Widget build(BuildContext context) {
     return ButtonBar(

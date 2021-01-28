@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// 按钮组件MyRaisedButton
 class MyRaisedButton extends StatelessWidget {
@@ -17,8 +18,11 @@ class MyRaisedButton extends StatelessWidget {
   }
 }
 
-/// Wrap 布局组件用于流布局（会自动换行）
-class WrapExampleA extends StatelessWidget {
+/// 
+class WrapExampleA extends ShowPage {
+  final String title = "Wrap";
+  final String subtitle = "流布局(会自动换行)";
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -53,3 +57,5 @@ class WrapExampleA extends StatelessWidget {
     );
   }
 }
+
+

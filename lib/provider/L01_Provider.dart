@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 import 'package:provider/provider.dart';
 
 
@@ -59,7 +60,9 @@ class ChildWidget extends StatelessWidget { // 3. 将Widget定义成 StatelessWi
 }
 
 
-class ProviderExampleA extends StatelessWidget {
+class ProviderExampleA extends ShowPage {
+  final String title = "Provider Example A";
+  final String subtitle = "Provider的使用";
 
   @override
   Widget build(BuildContext context) {

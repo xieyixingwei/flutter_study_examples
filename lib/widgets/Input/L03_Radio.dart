@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class RadioExampleA extends StatefulWidget {
+class RadioExampleA extends StatefulWidget  with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String image = "images/fluter.PNG";
+  final String title = "Radio RadioListTile";
+
   RadioExampleA({Key key})
     : super(key: key);
 
@@ -67,6 +72,7 @@ class _RadioExampleA extends State<RadioExampleA> {
               });
             },
           ),
+          Text(_radioValue.toString()),
         ],
       ),
     );

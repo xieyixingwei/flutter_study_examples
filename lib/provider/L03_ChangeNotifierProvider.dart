@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 import 'package:provider/provider.dart';
 
 
@@ -13,7 +14,9 @@ class MyDataModel extends ChangeNotifier {
   }
 }
 
-class ChangeNotifierProviderExampleA extends StatelessWidget {
+class ChangeNotifierProviderExampleA extends ShowPage {
+  final String title = "ChangeNotifierProvider Example A";
+  final String subtitle = "将ChangeNotifierProvider置于顶层Widget中";
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +61,11 @@ class ChildWidget extends StatelessWidget { // 3. 将Widget定义成 StatelessWi
 }
 
 // 将ChangeNotifierProvider移动到当前Widget
-class ChangeNotifierProviderExampleB extends StatelessWidget { // 1. 将Widget定义成 StatelessWidget
-  final MyDataModel notifier = MyDataModel(); // 2. 实例化 Notifier
+class ChangeNotifierProviderExampleB extends ShowPage { // 1. 将Widget定义成 StatelessWidget
+  final String title = "ChangeNotifierProvider Example B";
+  final String subtitle = "将ChangeNotifierProvider置于Widget内部";
 
-  ChangeNotifierProviderExampleB({Key key}) : super(key:key);
+  final MyDataModel notifier = MyDataModel(); // 2. 实例化 Notifier
 
   @override
   Widget build(BuildContext context) {

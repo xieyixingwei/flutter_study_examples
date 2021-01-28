@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class FloatingActionButtonExampleA extends StatelessWidget {
-  const FloatingActionButtonExampleA({Key key}) : super(key: key);
+class FloatingActionButtonExampleA extends ShowPage {
+  final String title = "FloatingActionButton";
 
   @override
   Widget build(BuildContext context) {

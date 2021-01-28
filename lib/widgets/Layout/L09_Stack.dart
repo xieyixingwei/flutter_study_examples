@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/components/MyIcon.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-/// 层叠容器组件 Stack的使用
-class StackExampleA extends StatelessWidget {
+
+class StackExampleA extends ShowPage {
+  final String title = "Stack的基本使用";
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,8 +23,10 @@ class StackExampleA extends StatelessWidget {
   }
 }
 
-/// 使用Align组件控制Stack中的子组件的位置
-class StackExampleB extends StatelessWidget {
+
+class StackExampleB extends ShowPage {
+  final String title = "使用Align组件控制Stack中的子组件的位置";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,8 +53,9 @@ class StackExampleB extends StatelessWidget {
   }
 }
 
-/// 使用Positioned组件控制Stack中的子组件的位置
-class StackExampleC extends StatelessWidget {
+
+class StackExampleC extends ShowPage {
+  final String title = "使用Positioned组件控制Stack中的子组件的位置";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -76,4 +82,15 @@ class StackExampleC extends StatelessWidget {
               ),
     );
   }
+}
+
+class StackExamples extends ShowPage {
+
+  final String title = "Stack";
+  final String subtitle = "层叠容器组件";
+  final List<ShowPage> items = [
+    StackExampleA(),
+    StackExampleB(),
+    StackExampleC(),
+  ];
 }

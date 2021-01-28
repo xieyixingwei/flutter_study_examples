@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class CheckBoxExampleA extends StatefulWidget {
+class CheckBoxExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "CheckBox";
+  final String subtitle = "复选框";
+
   CheckBoxExampleA({Key key})
     : super(key: key);
 
@@ -9,6 +14,7 @@ class CheckBoxExampleA extends StatefulWidget {
 }
 
 class _CheckBoxExampleA extends State<CheckBoxExampleA> {
+  final String title = "CheckBox CheckboxListTile 组件的使用";
   List<bool> _checkBoxValue = <bool>[true, false];
 
   // 生命周期函数
@@ -45,6 +51,7 @@ class _CheckBoxExampleA extends State<CheckBoxExampleA> {
               });
             },
           ),
+          Text(_checkBoxValue.toString())
         ],
       ),
     );

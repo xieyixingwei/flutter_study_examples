@@ -58,4 +58,3 @@ class _ShowItemComponent extends State<ShowItemComponent> {
     );
   }
 }
-

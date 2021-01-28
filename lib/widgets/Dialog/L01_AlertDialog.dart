@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class AlertDialogExampleA extends StatelessWidget {
-
+class AlertDialogExampleA extends ShowPage {
+  final String title = "AlertDialog";
   void _alertDialog(BuildContext context) async {
     var res = await showDialog(
       context: context,

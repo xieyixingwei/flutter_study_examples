@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:helloworld/pages/HomePage.dart';
 import 'package:helloworld/routes/Routes.dart';
 
 
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-            // home: MyTabs(),                 // 使用initialRoute路由代替
-            initialRoute: "/",                 // home 和 initialRoute至少要设置一个
+            home: Builder( // 继承于ShowPage，此处必须使用Builder
+              builder: (context) => HomePage().build(context), 
+            ),                
+            //initialRoute: "/",                 // home 和 initialRoute至少要设置一个
             // routes: {                       // routes 和 onGenerateRoute同时只能设置一个
             //   "/login": (context) => LoginPage(),
             //   "/register": (context) => RegisterPage(),

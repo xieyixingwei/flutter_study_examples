@@ -1,10 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// 列表组件 ListView 和 ListTile的使用
 /// ListView中不能再嵌套 ListView
-class ListViewExampleA extends StatelessWidget {
+class ListViewExampleA extends ShowPage {
+  final String title = "ListView 和 ListTile的基本使用";
+  final String subtitle = "ListView中不能再嵌套 ListView";
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -46,7 +50,9 @@ class ListViewExampleA extends StatelessWidget {
 }
 
 /// 水平列表
-class ListViewExampleB extends StatelessWidget {
+class ListViewExampleB extends ShowPage {
+  final String title = "ListView 水平列表";
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -62,7 +68,9 @@ class ListViewExampleB extends StatelessWidget {
 }
 
 /// 动态列表实现方式1
-class ListViewExampleC extends StatelessWidget {
+class ListViewExampleC extends ShowPage {
+  final String title = "动态列表实现方式1";
+
   final List _listData = [
     {
       "title": "Candy Shop",
@@ -98,7 +106,9 @@ class ListViewExampleC extends StatelessWidget {
 }
 
 /// 动态列表实现方式2
-class ListViewExampleD extends StatelessWidget {
+class ListViewExampleD extends ShowPage {
+  final String title = "动态列表实现方式2";
+
   final List _listData = [
     {
       "title": "Candy Shop",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
 class RaisedButtonExampleA extends StatelessWidget {
@@ -90,8 +91,8 @@ class RaisedButtonExampleE extends StatelessWidget {
 }
 
 
-class RaisedButtonPage extends StatelessWidget {
-
+class RaisedButtonPage extends ShowPage {
+  final String title = "RaisedButton";
   @override
   Widget build(BuildContext context) {
     return Column(

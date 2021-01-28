@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class SimpleDialogExampleA extends StatelessWidget {
 
+class SimpleDialogExampleA extends ShowPage {
+  final String title = "SimpleDialog";
   void _simpleDialog(BuildContext context) async {
     var res = await showDialog(
       context: context,

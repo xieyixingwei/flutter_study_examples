@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class FluttertoastExampleA extends StatelessWidget {
-
+class FluttertoastExampleA extends ShowPage {
+  final String title = "Fluttertoast";
   void _flutterToast(BuildContext context) {
     Fluttertoast.showToast(
       msg: "This is Center Short Toast",

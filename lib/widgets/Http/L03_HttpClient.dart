@@ -3,8 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'dart:convert'; // json转换
 import 'dart:io';
 
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class HttpClientExampleA extends StatefulWidget {
+
+class HttpClientExampleA extends StatefulWidget with ShowPage {
+    final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "HttpClient 实现网络请求";
+  final String subtitle = "HttpClient 位于 io.dart 里，Flutter Web 不支持 HttpClient";
+
   HttpClientExampleA({Key key}) : super(key: key);
 
   @override
@@ -52,22 +58,17 @@ class _HttpClientExampleA extends State<HttpClientExampleA> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       appBar: AppBar(
-         title: Text("HttpClient 实现网络请求"),
-       ),
-       body: Column(
-         children: [
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("get"),
-            onPressed: () {
-              _getData();
-            },
-            color: Theme.of(context).accentColor,
-          ),
-         ],
-      ),
-    );
+    return Column(
+            children: [
+              SizedBox(height: 10,),
+              RaisedButton(
+                child: Text("get"),
+                onPressed: () {
+                  _getData();
+                },
+                color: Theme.of(context).accentColor,
+              ),
+            ],
+          );
   }
 }

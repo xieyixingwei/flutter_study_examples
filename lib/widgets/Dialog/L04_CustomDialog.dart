@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class CustomDialogExampleA extends StatelessWidget {
 
+class CustomDialogExampleA extends ShowPage {
+  final String title = "自定义Dialog";
   void _showMyCustomDialog(BuildContext context) async {
     var res = await showDialog(
       context: context,

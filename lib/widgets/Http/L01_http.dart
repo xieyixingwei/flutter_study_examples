@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 import 'dart:convert'; // json转换
 import 'package:http/http.dart' as http;
 
 
-class HttpExampleA extends StatefulWidget {
+class HttpExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "http 实现网络请求";
+  final String subtitle = "http 是 Dart 原生的";
+
   HttpExampleA({Key key}) : super(key: key);
 
   @override
@@ -46,22 +51,17 @@ class _HttpExampleA extends State<HttpExampleA> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       appBar: AppBar(
-         title: Text("HTTP 实现网络请求"),
-       ),
-       body: Column(
-         children: [
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("get"),
-            onPressed: () {
-              _getData();
-            },
-            color: Theme.of(context).accentColor,
-          ),
-         ],
-      ),
-    );
+    return Column(
+            children: [
+              SizedBox(height: 10,),
+              RaisedButton(
+                child: Text("get"),
+                onPressed: () {
+                  _getData();
+                },
+                color: Theme.of(context).accentColor,
+              ),
+            ],
+          );
   }
 }

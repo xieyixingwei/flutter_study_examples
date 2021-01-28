@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:convert'; // json转换
 import 'package:dio/dio.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class DioExampleA extends StatefulWidget {
+class DioExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "DIO 实现网络请求";
+  final String subtitle = "DIO 属于第三方库";
+
   DioExampleA({Key key}) : super(key: key);
 
   @override
@@ -50,22 +55,17 @@ class _DioExampleA extends State<DioExampleA> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       appBar: AppBar(
-         title: Text("DIO 实现网络请求"),
-       ),
-       body: Column(
-         children: [
-          SizedBox(height: 10,),
-          RaisedButton(
-            child: Text("get"),
-            onPressed: () {
-              _getData();
-            },
-            color: Theme.of(context).accentColor,
-          ),
-         ],
-      ),
-    );
+    return Column(
+            children: [
+              SizedBox(height: 10,),
+              RaisedButton(
+                child: Text("get"),
+                onPressed: () {
+                  _getData();
+                },
+                color: Theme.of(context).accentColor,
+              ),
+            ],
+          );
   }
 }

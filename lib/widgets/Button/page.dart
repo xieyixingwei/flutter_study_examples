@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:helloworld/components/ShowWidgetComponent.dart';
 import './L01_RaisedButton.dart';
 import './L02_FlatButton.dart';
@@ -15,48 +14,15 @@ import './L06_FloatingActionButton.dart';
 /// ButtonBar 按钮组
 /// FloatingActionButton 浮动按钮
 
-class ButtonPage extends StatelessWidget {
-  final List _configs = [
-    {
-      "image":"images/fluter.PNG",
-      "title": "RaisedButton 的使用",
-      "subtitle":"",
-      "widget": RaisedButtonPage(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "FlatButton 的使用",
-      "subtitle":"",
-      "widget": FlatButtonExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "OutlineButton 的使用",
-      "subtitle":"",
-      "widget": OutlineButtonExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "IconButton 的使用",
-      "subtitle":"",
-      "widget": IconButtonExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "ButtonBar 的使用",
-      "subtitle":"",
-      "widget": ButtonBarExampleA(),
-    },
-    {
-      "image":"images/fluter.PNG",
-      "title": "FloatingActionButton 的使用",
-      "subtitle":"",
-      "widget": FloatingActionButtonExampleA(),
-    },
-  ];
+class ButtonPage extends ShowPage {
+  final String title = "Button";
 
-  @override
-  Widget build(BuildContext context) {
-    return ShowWidgetComponent(title: "Button 组件", configs:_configs);
-  }
+  final List<ShowPage> items = [
+    RaisedButtonPage(),
+    FlatButtonExampleA(),
+    OutlineButtonExampleA(),
+    IconButtonExampleA(),
+    ButtonBarExampleA(),
+    FloatingActionButtonExampleA(),
+  ];
 }

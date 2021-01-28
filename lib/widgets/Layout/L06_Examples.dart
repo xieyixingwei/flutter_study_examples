@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/components/MyIcon.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-/// 综合使用 Row Column Expanded SizedBox
-class LayoutExampleA extends StatelessWidget {
+class LayoutExampleA extends ShowPage {
+  final String title = "综合使用 Row Column Expanded SizedBox";
+
   @override
   Widget build(BuildContext context) {
     return Column(

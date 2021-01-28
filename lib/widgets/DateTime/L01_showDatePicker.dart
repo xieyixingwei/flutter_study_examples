@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class ShowDatePickerExampleA extends StatefulWidget {
+class ShowDatePickerExampleA extends StatefulWidget with ShowPage{
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "showDatePicker showTimePicker";
+
   ShowDatePickerExampleA({Key key}) : super(key: key);
 
   @override

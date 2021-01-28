@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
 /// ClipOval实现圆角图片
-class ClipOvalExampleA extends StatelessWidget {
+class ClipOvalExampleA extends ShowPage {
+  final String title = "ClipOval";
+  final String subtitle = "显示圆角图片";
+
   @override
   Widget build(BuildContext context) {
     return ClipOval(
@@ -17,7 +21,9 @@ class ClipOvalExampleA extends StatelessWidget {
 }
 
 /// 圆角图片实现方式2
-class ImageRadiusExample extends StatelessWidget {
+class ImageRadiusExample extends ShowPage {
+  final String title = "Container 显示圆角图片";
+
   @override
   Widget build(BuildContext context) {
     return Container(

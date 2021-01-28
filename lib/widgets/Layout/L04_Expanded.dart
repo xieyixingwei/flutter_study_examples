@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/components/MyIcon.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
 /// Expanded
-class ExpandedExampleA extends StatelessWidget {
+class ExpandedExampleA extends ShowPage {
+  final String title = "Expanded";
+
   @override
   Widget build(BuildContext context) {
     return Row(

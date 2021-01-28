@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
 /// Padding 的使用
-class PaddingExampleA extends StatelessWidget {
+class PaddingExampleA extends ShowPage {
+  final String title = "Padding";
+  final String subtitle = "设置Widget的内边距";
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(

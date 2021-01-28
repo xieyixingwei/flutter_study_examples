@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-class SwitchExampleA extends StatefulWidget {
+class SwitchExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "Switch SwitchListTile";
+
   SwitchExampleA({Key key})
     : super(key: key);
 

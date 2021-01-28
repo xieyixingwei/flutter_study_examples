@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-class ModalBottomSheetExampleA extends StatelessWidget {
-
+class ModalBottomSheetExampleA extends ShowPage {
+  final String title = "ModalBottomSheet";
   void _showModalBottomSheet(BuildContext context) async {
     var res = await showModalBottomSheet(
       context: context,

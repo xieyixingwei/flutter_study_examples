@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-/// Container组件类似于HTML的<div>
-class ContainerExampleA extends StatelessWidget {
+
+class ContainerExampleA extends ShowPage {
+  final String image = "lib/widgets/Layout/images/Container.PNG";
+  final String title = "Container";
+  final String subtitle = "Container组件类似于HTML的<div>, 一个拥有绘制、定位、调整大小的 widget";
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// Text组件的使用
-class TextExampleA extends StatelessWidget {
+class TextExampleA extends ShowPage {
+  final String image = "lib/widgets/Text/images/Text.PNG";
+  final String title = "Text 组件的使用";
+  final String subtitle = "";
+  final String document = null;
+
   @override
   Widget build(BuildContext context) {
     return Text(

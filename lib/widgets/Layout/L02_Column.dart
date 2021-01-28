@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/components/MyIcon.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 
-/// Colum组件和ListView的区别是ListView的宽度会铺满整个显示区域的宽度
-/// 而Colum组件的宽度是子元素的宽度
-class ColumnExampleA extends StatelessWidget {
+class ColumnExampleA extends ShowPage {
+  final String title = "Column 组件的使用";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,10 +34,8 @@ class ColumnExampleA extends StatelessWidget {
 }
 
 
-class ColumnExampleB extends StatelessWidget {
-  static String image = null;
-  static String title = "Column和Row互相嵌套";
-  static String subtitle = "";
+class ColumnExampleB extends ShowPage {
+  final String title = "Column和Row互相嵌套";
 
   @override
   Widget build(BuildContext context) {
@@ -60,4 +59,15 @@ class ColumnExampleB extends StatelessWidget {
       ],
     );
   }
+}
+
+
+class ColumnExamples extends ShowPage {
+  final String image = "lib/widgets/Layout/images/Column.PNG";
+  final String title = "Column";
+  final String subtitle = "Colum组件和ListView的区别是ListView的宽度会铺满整个显示区域的宽度，而Colum组件的宽度是子元素的宽度";
+  final List<ShowPage> items = [
+    ColumnExampleA(),
+    ColumnExampleB(),
+  ];
 }

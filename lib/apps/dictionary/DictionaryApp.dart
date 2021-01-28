@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/apps/dictionary/pages/Edit/page.dart';
 import 'package:helloworld/apps/dictionary/store/store.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 import 'package:provider/provider.dart';
 import './home/TabHome.dart';
 import './TabPractice.dart';
@@ -7,7 +9,11 @@ import './TabDiscover.dart';
 import './TabProfile.dart';
 
 
-class DictionaryApp extends StatefulWidget {
+class DictionaryApp extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "英语词典APP";
+  final String subtitle = "查词、学习";
+
   final index;
   DictionaryApp({Key key, this.index=0}) : super(key: key);
 
@@ -18,7 +24,8 @@ class DictionaryApp extends StatefulWidget {
 class _DictionaryApp extends State<DictionaryApp> {
   int _currentIndex = 0;
   List<Widget> _tabs = [
-    TabHome(),
+    //TabHome(),
+    EditPage(),
     TabPractice(),
     TabDiscover(),
     TabProfile(),
@@ -32,7 +39,7 @@ class _DictionaryApp extends State<DictionaryApp> {
     super.initState();
 
   }
-  
+
   @override
   Widget build(BuildContext context) {
     // print(MediaQuery.of(context).size.toString());

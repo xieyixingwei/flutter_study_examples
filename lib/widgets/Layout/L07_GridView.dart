@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
-/// 网格布局组件 GridView 的使用
-class GridExampleA extends StatelessWidget {
+
+class GridExampleA extends ShowPage {
+  final String title = "GridView的基本使用";
+
   List<Widget> _getData() {
     List<Widget> list = List();
     for(var i = 0; i < 5; i++) {
@@ -30,7 +33,10 @@ class GridExampleA extends StatelessWidget {
   }
 }
 
-class GridExampleB extends StatelessWidget {
+
+class GridExampleB extends ShowPage {
+  final String title = "GridView 动态获取组件布局";
+
   final List _listData = [
     {
       "title": "Candy Shop",
@@ -77,8 +83,9 @@ class GridExampleB extends StatelessWidget {
   }
 }
 
-/// GridView.builder的使用
-class GridExampleC extends StatelessWidget {
+
+class GridExampleC extends ShowPage {
+  final String title = "GridView.builder的使用";
   final List _listData = [
     {
       "title": "Candy Shop",
@@ -127,4 +134,14 @@ class GridExampleC extends StatelessWidget {
       },
     );
   }
+}
+
+class GridViewExamples extends ShowPage {
+
+  final String title = "GridView";
+  final String subtitle = "网格布局";
+  final List<ShowPage> items = [
+    GridExampleA(),
+    GridExampleB(),
+  ];
 }

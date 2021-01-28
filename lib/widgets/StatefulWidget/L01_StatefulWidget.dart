@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowWidgetComponent.dart';
 
 /// 自定义有状态组件
-class StatefulWidgetExampleA extends StatefulWidget {
+class StatefulWidgetExampleA extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "StatefulWidget 实例1";
+
   StatefulWidgetExampleA({Key key}) : super(key: key);
 
   @override
@@ -32,7 +36,10 @@ class _StatefulWidgetExampleA extends State<StatefulWidgetExampleA> {
   }
 }
 
-class StatefulWidgetExampleB extends StatefulWidget {
+class StatefulWidgetExampleB extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "StatefulWidget 实例2";
+
   StatefulWidgetExampleB({Key key}) : super(key: key);
 
   @override
