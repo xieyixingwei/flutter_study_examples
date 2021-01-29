@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/MyIcon.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 class LayoutExampleA extends ShowPage {
   final String title = "综合使用 Row Column Expanded SizedBox";
+
+  _container(Widget child, Color color) =>
+  Container(
+    child: child,
+    decoration: BoxDecoration(
+      color: color,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +52,12 @@ class LayoutExampleA extends ShowPage {
                   children: <Widget>[
                     Container(
                       height: 85,
-                      child: MyIcon(Icons.home, color: Colors.green,),//Image.asset("images/a.jpg", fit: BoxFit.cover),
+                      child: _container(Text("详情"), Colors.pink),//Image.asset("images/a.jpg", fit: BoxFit.cover),
                     ),
                     SizedBox(height: 10,),
                     Container(
                       height: 85,
-                      child: MyIcon(Icons.search, color: Colors.blue,),
+                      child: _container(Text("搜索"), Colors.teal),
                     )
                     
                   ],

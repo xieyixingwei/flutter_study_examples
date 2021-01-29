@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/MyIcon.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 class StackExampleA extends ShowPage {
@@ -16,7 +15,7 @@ class StackExampleA extends ShowPage {
           width: 300,
           color: Colors.red,
         ),
-        MyIcon(Icons.home, color: Colors.blue,),
+        Icon(Icons.home, color: Colors.blue,),
         Text("我是一个文本"),
       ],
     );
@@ -37,11 +36,11 @@ class StackExampleB extends ShowPage {
                 children: <Widget>[
                   Align(
                     alignment: Alignment(-0.5, 0.2),
-                    child: MyIcon(Icons.home, size: 100.0, color: Colors.blue,),
+                    child: Icon(Icons.home, size: 100.0, color: Colors.blue,),
                   ),
                   Align(
                     alignment: Alignment(-0.8, -0.7),
-                    child: MyIcon(Icons.pages, size: 80.0, color: Colors.yellow,),
+                    child: Icon(Icons.pages, size: 80.0, color: Colors.yellow,),
                   ),
                   Align(
                     alignment: Alignment(0.5, 0.6),
@@ -67,12 +66,12 @@ class StackExampleC extends ShowPage {
                   Positioned(
                     left: 10,
                     top: 30,
-                    child: MyIcon(Icons.home, size: 100.0, color: Colors.blue,),
+                    child: Icon(Icons.home, size: 100.0, color: Colors.blue,),
                   ),
                   Positioned(
                     right: 20,
                     top: 40,
-                    child: MyIcon(Icons.pages, size: 80.0, color: Colors.yellow,),
+                    child: Icon(Icons.pages, size: 80.0, color: Colors.yellow,),
                   ),
                   Positioned(
                     top: 220,
@@ -85,7 +84,6 @@ class StackExampleC extends ShowPage {
 }
 
 class StackExamples extends ShowPage {
-
   final String title = "Stack";
   final String subtitle = "层叠容器组件";
   final List<ShowPage> items = [

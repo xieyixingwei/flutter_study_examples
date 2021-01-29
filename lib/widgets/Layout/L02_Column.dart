@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/MyIcon.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 class ColumnExampleA extends ShowPage {
   final String title = "Column 组件的使用";
+
+  _container(double w, double h) =>
+    Container(
+      width: w,
+      height: h,
+      decoration: BoxDecoration(
+        color: Colors.orange,
+      ),
+    );
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +22,19 @@ class ColumnExampleA extends ShowPage {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: MyIcon(Icons.home),
+          child: _container(50,80),
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: MyIcon(Icons.search),
+          child: _container(70,120),
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: MyIcon(Icons.pages),
+          child: _container(150,100),
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: MyIcon(Icons.tab),
+          child: _container(80,90),
         ),
       ],
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 /// 卡片组件 Card的使用
 class CardExampleA extends ShowPage {

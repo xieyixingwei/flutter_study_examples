@@ -1,4 +1,4 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import './L01_TabController.dart';
 import './L02_DefaultTabController.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/common/OnOffWidget.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 Widget onOffWidgetExampleA(){

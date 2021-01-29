@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import './ChildPage.dart';
 
 
-class TabContacts extends StatefulWidget {
-  TabContacts({Key key}) : super(key: key);
+class NavigatorPage extends StatefulWidget with ShowPage {
+  final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false
+  final String title = "Navigator 跳转路由";
+  final String subtitle = "响应触摸事件并将用户路由到不同的页面视图（View）";
+
+  NavigatorPage({Key key}) : super(key: key);
 
   @override
-  _TabContactsState createState() => _TabContactsState();
+  _NavigatorPageState createState() => _NavigatorPageState();
 }
 
 
-class _TabContactsState extends State<TabContacts> {
+class _NavigatorPageState extends State<NavigatorPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -46,15 +51,10 @@ class _TabContactsState extends State<TabContacts> {
             },
           ),
           ListTile(
-            title: Text("使用DefaultTabController和Scaffold实现顶部tab页面切换"),
+            title: Text("命名路由跳转并传值"),
             onTap: (){
-                Navigator.pushNamed(context, "/appbarpage");
-            },
-          ),
-          ListTile(
-            title: Text("使用TabController和Scaffold实现顶部tab页面切换"),
-            onTap: (){
-                Navigator.pushNamed(context, "/tabbarpage");
+                // 命名路由跳转并传值
+                Navigator.pushNamed(context, "/childd", arguments:"hello world");
             },
           ),
         ],

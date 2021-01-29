@@ -1,4 +1,4 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import './L01_RaisedButton.dart';
 import './L02_FlatButton.dart';
 import './L03_OutlineButton.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 /// Text组件的使用
 class TextExampleA extends ShowPage {

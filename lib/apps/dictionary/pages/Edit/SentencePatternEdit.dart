@@ -63,7 +63,13 @@ class _SentencePatternEditState extends State<SentencePatternEdit> {
   _englishSentenceEdit(BuildContext context) => MouseRegion(
       onEnter: (e) => setState((){ status = !status;}),
       onExit: (e)=> setState((){ status = !status;}),
-      child: TextField(
+      //child: 
+      //GestureDetector(
+      //onTap: () {
+      //  print('MyButton was tapped!');
+      //  status = !status;
+      //},
+      child:TextField(
         maxLines: 1,
         controller: widget._controllerA,
         style: TextStyle(
@@ -79,7 +85,8 @@ class _SentencePatternEditState extends State<SentencePatternEdit> {
         onChanged: (String value){
           if(widget._onChanged != null) widget._onChanged[0](value);
         }
-      ),
+     // ),
+    )
   );
 
   _chineseSentenceEdit(BuildContext context) => TextField(

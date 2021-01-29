@@ -30,7 +30,7 @@ class ImageCard extends StatelessWidget {
                   );
     return Container(
       width: 260,
-      height: this._image != null ? 340 : 200,
+      height: this._image != null ? 320 : 200,
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
@@ -55,9 +55,9 @@ class ImageCard extends StatelessWidget {
               child:Image.asset(this._image, fit: BoxFit.cover),
               )
             ) : SizedBox(height: 20,),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           titleWidget,
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           Text(this._subtitle, style:TextStyle(fontSize:15, fontWeight:FontWeight.w400,),),
         ],
       ),

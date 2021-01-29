@@ -40,3 +40,19 @@ class ChildPageC extends StatelessWidget {
     );
   }
 }
+
+class ChildPageD extends StatelessWidget {
+  final String _arguments;
+
+  const ChildPageD({Key key, String arguments})
+    : _arguments = arguments,
+      super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Child Page D")),
+      body: Text("这是子页面 D, 传过来的参数: $_arguments")
+    );
+  }
+}

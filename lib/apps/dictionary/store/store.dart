@@ -14,9 +14,9 @@ Map<String, Object> blankSentence() {
 
 class Store extends ChangeNotifier {
   List<bool> onOffWidget = [true, true, true];
-  String wordName = "";
-  String voiceUS = "";
-  String voiceUK = "";
+  String wordName = "motion";
+  String voiceUS = "['moʊʃn]";
+  String voiceUK = "['məʊʃn]";
   List<String> tags = ["现在分词", "过去分词", "完成时", "第三人称单数", "名词形式", "副词形式", "形容词形式"];
   List<String> etyma = []; // 词根词缀 ["dis", "ion", "er", "or", "pre", "un"],
   List<String> morph = []; // 单词变型
@@ -68,10 +68,10 @@ class Store extends ChangeNotifier {
   List<String> partOfSpeechOptions = ["n.", "vt.", "vi.", "v.", "adj."];
   List<Map> partOfSpeech = [ // 词性
       {
-        "type": "名词(n.)",
+        "type": "n.",
         "items": [
           {
-            "type": "同等者， 同等物，同等的人物",
+            "type": "移动",
             "sentences": [
               {
                 "tags":["问候语"],
@@ -79,7 +79,7 @@ class Store extends ChangeNotifier {
                 "form": ["被动语态"],
                 "synonym": [1,2],
                 "antonym": [3,5],
-                "pattern": ["The filter is defined as a box of coordinates.", "过滤器定义的是一个方框的坐标。"],
+                "pattern": ["The object is no longer in motion", "该物体已不处於运动状态"],
               }
             ]
           },

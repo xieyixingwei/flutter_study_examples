@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'dart:convert'; // json转换
 import 'dart:io';
 
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 class HttpClientExampleA extends StatefulWidget with ShowPage {

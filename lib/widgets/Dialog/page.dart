@@ -1,4 +1,4 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import './L01_AlertDialog.dart';
 import './L02_SimpleDialog.dart';
 import './L03_ModalBottomSheet.dart';

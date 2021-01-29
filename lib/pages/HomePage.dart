@@ -1,14 +1,16 @@
 import 'package:helloworld/apps/dictionary/DictionaryApp.dart';
 import 'package:helloworld/apps/wechat/WechatApp.dart';
 import 'package:helloworld/common/page.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import 'package:helloworld/pages/R01_BaseWidget.dart';
 import 'package:helloworld/provider/page.dart';
+import 'package:helloworld/widgets/Clip/page.dart';
 import 'package:helloworld/widgets/Http/page.dart';
 import 'package:helloworld/widgets/Input/page.dart';
 import 'package:helloworld/widgets/Layout/page.dart';
 import 'package:helloworld/widgets/Meterial/page.dart';
 import 'package:helloworld/widgets/Mouse/page.dart';
+import 'package:helloworld/widgets/Navigator/page.dart';
 
 
 class HomePage extends ShowPage {
@@ -17,17 +19,13 @@ class HomePage extends ShowPage {
     BaseWidgetPage(),
     MeterialPage(),
     LayoutPage(),
-    /*
-    {
-      "title":"路由",
-      "subtitle":"响应触摸事件并将用户路由到不同的页面视图（View）。",
-      "route":"/RoutePage",
-    },*/
+    NavigatorPage(),
     InputPage(),
     HttpPage(),
     ProviderPage(),
     CommonExamplePage(),
     MousePage(),
+    ClipPage(),
     WechatApp(),
     DictionaryApp(),
     /*

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import 'package:helloworld/provider/L01_Provider.dart';
 import 'package:helloworld/provider/L03_ChangeNotifierProvider.dart';
 

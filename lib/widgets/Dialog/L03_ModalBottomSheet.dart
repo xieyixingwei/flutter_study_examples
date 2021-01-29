@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 
 class ModalBottomSheetExampleA extends ShowPage {

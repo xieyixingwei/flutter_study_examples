@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 /// 自定义有状态组件
 class StatefulWidgetExampleA extends StatefulWidget with ShowPage {

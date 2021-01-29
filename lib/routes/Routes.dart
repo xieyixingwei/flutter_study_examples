@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/widgets/Navigator/ChildPage.dart';
 
 // 定义命名路由
 final _routes = {
-  /*
   "/childc": (context) => ChildPageC(),
-  "/login": (context) => LoginPage(),
-  "/register": (context, {arguments}) => RegisterPage(arguments: arguments),
-  "/user": (context) => UserPage(),*/
+  "/childd": (context, {arguments}) => ChildPageD(arguments: arguments),
 };
 
 // 实现命名路由传参的函数

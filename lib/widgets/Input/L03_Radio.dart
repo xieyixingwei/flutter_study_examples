@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 
 class RadioExampleA extends StatefulWidget  with ShowPage {
   final bool isStateless = false; // StatefulWidget组件需要设置isStateless为false

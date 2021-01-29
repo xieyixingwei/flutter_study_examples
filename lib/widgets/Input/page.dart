@@ -1,4 +1,4 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import './L01_TextField.dart';
 import './L02_Checkbox.dart';
 import './L03_Radio.dart';

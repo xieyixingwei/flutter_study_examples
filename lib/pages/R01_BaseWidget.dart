@@ -1,4 +1,4 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import 'package:helloworld/widgets/Button/page.dart';
 import 'package:helloworld/widgets/Card/page.dart';
 import 'package:helloworld/widgets/DateTime/page.dart';

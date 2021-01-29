@@ -1,4 +1,5 @@
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
+import 'package:helloworld/widgets/Layout/L10_Align.dart';
 import 'package:helloworld/widgets/ListView/page.dart';
 import './L00_Container.dart';
 import './L01_Padding.dart';
@@ -22,6 +23,7 @@ class LayoutPage extends ShowPage {
     RowExamples(),
     ColumnExamples(),
     ExpandedExampleA(),
+    AlignExamples(),
     ListViewPage(),
     WrapExampleA(),
     LayoutExampleA(),

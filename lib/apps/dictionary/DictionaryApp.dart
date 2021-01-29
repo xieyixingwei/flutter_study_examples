@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/apps/dictionary/pages/Edit/page.dart';
 import 'package:helloworld/apps/dictionary/store/store.dart';
-import 'package:helloworld/components/ShowWidgetComponent.dart';
+import 'package:helloworld/components/ShowPage.dart';
 import 'package:provider/provider.dart';
 import './home/TabHome.dart';
 import './TabPractice.dart';
@@ -24,10 +24,10 @@ class DictionaryApp extends StatefulWidget with ShowPage {
 class _DictionaryApp extends State<DictionaryApp> {
   int _currentIndex = 0;
   List<Widget> _tabs = [
-    //TabHome(),
+    TabHome(),
     EditPage(),
     TabPractice(),
-    TabDiscover(),
+    //TabDiscover(),
     TabProfile(),
   ];
 
