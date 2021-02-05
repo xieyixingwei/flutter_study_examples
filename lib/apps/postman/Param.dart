@@ -14,7 +14,7 @@ class Param extends StatefulWidget {
 
 class _ParamState extends State<Param> {
 
-  final List<String> methods = ["GET", "POST", "DELETE"];
+  final List<String> methods = ["GET", "POST", "PUT", "PATCH", "DELETE"];
   final List<List> _requstHeader = [
     [false, "form-data"],
     [true, "x-www-form-urlencoded"],

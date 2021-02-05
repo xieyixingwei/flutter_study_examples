@@ -34,7 +34,7 @@ class HttpAction {
   }
 
   _get() async {
-    String api = _url + _getParams();
+    String api = _url;// + _getParams();
     var res = await http.get(api, headers: _headers);
     //if(res.statusCode == 200) {
     if(_callback != null) _callback(res);
@@ -69,6 +69,26 @@ class HttpAction {
     */
   }
 
+  _put() async {
+    var res = await http.put(
+      _url,
+      headers: _headers,
+      body: _postData(),
+      encoding: Utf8Codec()
+    );
+    if(_callback != null) _callback(res);
+  }
+
+  _patch() async {
+    var res = await http.patch(
+      _url,
+      headers: _headers,
+      body: _postData(),
+      encoding: Utf8Codec()
+    );
+    if(_callback != null) _callback(res);
+  }
+
   _delete() async {
     var res = await http.delete(
       _url,
@@ -88,6 +108,8 @@ class HttpAction {
 
     if(method == "GET") _get();
     if(method == "POST") _post();
+    if(method == "PUT") _put();
+    if(method == "PATCH") _patch();
     if(method == "DELETE") _delete();
   }
 }
