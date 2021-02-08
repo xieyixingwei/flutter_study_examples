@@ -1,4 +1,5 @@
 import 'package:helloworld/apps/dictionary/DictionaryApp.dart';
+import 'package:helloworld/apps/github/pages/GithubApp.dart';
 import 'package:helloworld/apps/postman/PostManApp.dart';
 import 'package:helloworld/apps/wechat/WechatApp.dart';
 import 'package:helloworld/common/page.dart';
@@ -30,6 +31,7 @@ class HomePage extends ShowPage {
     WechatApp(),
     DictionaryApp(),
     PostManApp(),
+    GithubApp(),
     /*
     {
       "title":"动画和Motion",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/apps/dictionary/pages/LoginPage.dart';
 
 class TabProfile extends StatefulWidget {
   TabProfile({Key key}) : super(key: key);
@@ -10,6 +11,6 @@ class TabProfile extends StatefulWidget {
 class _TabProfileState extends State<TabProfile> {
   @override
   Widget build(BuildContext context) {
-    return Text("我的");
+    return LoginPage();
   }
 }

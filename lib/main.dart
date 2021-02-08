@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:helloworld/apps/github/common/Global.dart';
 import 'package:helloworld/pages/HomePage.dart';
 import 'package:helloworld/routes/Routes.dart';
 
@@ -11,10 +12,13 @@ import 'package:helloworld/routes/Routes.dart';
 //     sdk: flutter
 // import 'package:flutter_localizations/flutter_localizations.dart';
 
-
+/*
 void main() {
   runApp(MyApp());
 }
+*/
+
+void main() => Global.init().then((e) => runApp(MyApp()));
 
 var appTheme = ThemeData.light(); // 定义APP的全局主题
 
