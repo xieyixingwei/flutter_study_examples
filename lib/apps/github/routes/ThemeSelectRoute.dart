@@ -9,7 +9,7 @@ class ThemeChangeRoute extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(GmLocalizations.of(context).theme),
+        title: Text("Theme"),///GmLocalizations.of(context).theme),
       ),
       body: ListView( //显示主题色块
         children: Global.themes.map<Widget>((e) {

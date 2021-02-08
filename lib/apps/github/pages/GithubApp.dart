@@ -14,6 +14,9 @@ import 'package:provider/single_child_widget.dart';
 
 
 class GithubApp extends StatelessWidget with ShowPage {
+  final String title = "GitHub";
+  final String subtitle = "Flutter 实战";
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class GithubApp extends StatelessWidget with ShowPage {
               primarySwatch: themeModel.theme,
             ),
             onGenerateTitle: (context){
-              return GmLocalizations.of(context).title;
+              return "GitHub App";///GmLocalizations.of(context).title;
             },
             home: HomeRoute(), //应用主页
             locale: localeModel.getLocale(),
@@ -44,7 +47,7 @@ class GithubApp extends StatelessWidget with ShowPage {
               // 本地化的代理类
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
-              GmLocalizationsDelegate()
+              ///GmLocalizationsDelegate()
             ],
             localeResolutionCallback:
                 (Locale _locale, Iterable<Locale> supportedLocales) {

@@ -31,9 +31,9 @@ class _LoginRouteState extends State<LoginRoute> {
 
   @override
   Widget build(BuildContext context) {
-    var gm = GmLocalizations.of(context);
+    ///var gm = GmLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(gm.login)),
+      appBar: AppBar(title: Text("Login")),///gm.login)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -45,20 +45,20 @@ class _LoginRouteState extends State<LoginRoute> {
                   autofocus: _nameAutoFocus,
                   controller: _unameController,
                   decoration: InputDecoration(
-                    labelText: gm.userName,
-                    hintText: gm.userNameOrEmail,
+                    labelText: "User Name",///gm.userName,
+                    hintText: "User Name Or Email",///gm.userNameOrEmail,
                     prefixIcon: Icon(Icons.person),
                   ),
                   // 校验用户名（不能为空）
                   validator: (v) {
-                    return v.trim().isNotEmpty ? null : gm.userNameRequired;
+                    return v.trim().isNotEmpty ? null : "Require User Name";///gm.userNameRequired;
                   }),
               TextFormField(
                 controller: _pwdController,
                 autofocus: !_nameAutoFocus,
                 decoration: InputDecoration(
-                    labelText: gm.password,
-                    hintText: gm.password,
+                    labelText: "Password",///gm.password,
+                    hintText: "Password",///gm.password,
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -72,7 +72,7 @@ class _LoginRouteState extends State<LoginRoute> {
                 obscureText: !pwdShow,
                 //校验密码（不能为空）
                 validator: (v) {
-                  return v.trim().isNotEmpty ? null : gm.passwordRequired;
+                  return v.trim().isNotEmpty ? null : "Require User Name";///gm.passwordRequired;
                 },
               ),
               Padding(
@@ -83,7 +83,7 @@ class _LoginRouteState extends State<LoginRoute> {
                     color: Theme.of(context).primaryColor,
                     onPressed: _onLogin,
                     textColor: Colors.white,
-                    child: Text(gm.login),
+                    child: Text("Login"),///gm.login),
                   ),
                 ),
               ),
@@ -97,16 +97,19 @@ class _LoginRouteState extends State<LoginRoute> {
   void _onLogin() async {
     // 提交前，先验证各个表单字段是否合法
     if ((_formKey.currentState as FormState).validate()) {
-      showLoading(context);
+      ///showLoading(context);
       User user;
       try {
         user = await Git(context).login(_unameController.text, _pwdController.text);
+        print("--- login success");
         // 因为登录页返回后，首页会build，所以我们传false，更新user后不触发更新
         Provider.of<UserModel>(context, listen: false).user = user;
+        print("--- login 2");
       } catch (e) {
         //登录失败则提示
+        print("--- login failed");
         if (e.response?.statusCode == 401) {
-          Fluttertoast.showToast(msg:GmLocalizations.of(context).userNameOrPasswordWrong);
+          Fluttertoast.showToast(msg:"User name or password wrong!");///GmLocalizations.of(context).userNameOrPasswordWrong);
         } else {
           Fluttertoast.showToast(msg:e.toString());
         }

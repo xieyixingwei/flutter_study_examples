@@ -69,7 +69,7 @@ class _RepoItemState extends State<RepoItem> {
                       padding: const EdgeInsets.only(top: 8, bottom: 12),
                       child: widget.repo.description == null
                           ? Text(
-                              GmLocalizations.of(context).noDescription,
+                              "noDescription", ///GmLocalizations.of(context).noDescription,
                               style: TextStyle(
                                   fontStyle: FontStyle.italic,
                                   color: Colors.grey[700]),
@@ -121,7 +121,8 @@ class _RepoItemState extends State<RepoItem> {
                       .toString()
                       .padRight(paddingWidth)),
 
-              Icon(MyIcons.fork), //我们的自定义图标
+              Icon(Icons.person_add), /// Icon(MyIcons.fork), //我们的自定义图标
+
               Text(widget.repo.forks_count.toString().padRight(paddingWidth)),
             ];
 

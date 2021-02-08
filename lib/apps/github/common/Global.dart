@@ -19,7 +19,7 @@ class Global {
   static Profile profile = Profile();
   static NetCache netCache = NetCache(); // 网络缓存对象
   static List<MaterialColor> get themes => _themes; // 可选的主题列表
-  static bool get isRelease => bool.fromEnvironment("dart.vm.product"); // 是否为release版
+  static bool get isRelease => true; //////bool.fromEnvironment("dart.vm.product"); // 是否为release版
 
   // 初始化全局信息，会在APP启动时执行
   static Future init() async {

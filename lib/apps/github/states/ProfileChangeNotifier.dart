@@ -4,7 +4,7 @@ import 'package:helloworld/apps/github/models/index.dart';
 
 
 class ProfileChangeNotifier extends ChangeNotifier {
-  Profile get _profile => Global.profile;
+  Profile get profile => Global.profile;
 
   @override
   void notifyListeners() {

@@ -43,7 +43,7 @@ class MyDrawer extends StatelessWidget {
                     child: value.isLogin
                         ? gmAvatar(value.user.avatar_url, width: 80)
                         : Image.asset(
-                            "imgs/avatar-default.png",
+                            "images/b.jpg",///"imgs/avatar-default.png",
                             width: 80,
                           ),
                   ),
@@ -51,7 +51,7 @@ class MyDrawer extends StatelessWidget {
                 Text(
                   value.isLogin
                       ? value.user.login
-                      : GmLocalizations.of(context).login,
+                      : "Login",///GmLocalizations.of(context).login,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -72,36 +72,36 @@ class MyDrawer extends StatelessWidget {
   Widget _buildMenus() {
     return Consumer<UserModel>(
       builder: (BuildContext context, UserModel userModel, Widget child) {
-        var gm = GmLocalizations.of(context);
+        ///var gm = GmLocalizations.of(context);
         return ListView(
           children: <Widget>[
             ListTile(
               leading: const Icon(Icons.color_lens),
-              title: Text(gm.theme),
+              title: Text("Theme"),///gm.theme),
               onTap: () => Navigator.pushNamed(context, "themes"),
             ),
             ListTile(
               leading: const Icon(Icons.language),
-              title: Text(gm.language),
+              title: Text("Language"),///gm.language),
               onTap: () => Navigator.pushNamed(context, "language"),
             ),
             if(userModel.isLogin) ListTile(
               leading: const Icon(Icons.power_settings_new),
-              title: Text(gm.logout),
+              title: Text("Logout"),///gm.logout),
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (ctx) {
                     //退出账号前先弹二次确认窗
                     return AlertDialog(
-                      content: Text(gm.logoutTip),
+                      content: Text("LogoutTip"),///gm.logoutTip),
                       actions: <Widget>[
                         FlatButton(
-                          child: Text(gm.cancel),
+                          child: Text("Cancel"),///gm.cancel),
                           onPressed: () => Navigator.pop(context),
                         ),
                         FlatButton(
-                          child: Text(gm.yes),
+                          child: Text("Yes"),///gm.yes),
                           onPressed: () {
                             //该赋值语句会触发MaterialApp rebuild
                             userModel.user = null;

@@ -19,7 +19,7 @@ class _HomeRouteState extends State<HomeRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(GmLocalizations.of(context).home),
+        title: Text("Home"),///GmLocalizations.of(context).home),
       ),
       body: _buildBody(), // 构建主页面
       drawer: MyDrawer(), //抽屉菜单
@@ -32,7 +32,7 @@ class _HomeRouteState extends State<HomeRoute> {
       //用户未登录，显示登录按钮
       return Center(
         child: RaisedButton(
-          child: Text(GmLocalizations.of(context).login),
+          child: Text("Login"),///GmLocalizations.of(context).login),
           onPressed: () => Navigator.of(context).pushNamed("login"),
         ),
       );
