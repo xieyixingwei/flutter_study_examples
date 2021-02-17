@@ -9,6 +9,7 @@ import 'package:helloworld/apps/github/models/index.dart';
 
 
 class Git {
+  String _basic;
   // 在网络请求过程中可能会需要使用当前的context信息，比如在请求失败时
   // 打开一个新路由，而打开新路由需要context信息。
   Git([this.context]) {
@@ -47,24 +48,25 @@ class Git {
 
   // 登录接口，登录成功后返回用户信息
   Future<User> login(String login, String pwd) async {
-    String basic = 'Basic ' + base64.encode(utf8.encode('$login:$pwd'));
+    _basic = 'Basic ' + base64.encode(utf8.encode('$login:$pwd'));
     print('登录 $login $pwd');
 
     var r = await dio.get(
       "/users/$login",
       options: _options.merge(headers: {
-        HttpHeaders.authorizationHeader: basic
+        HttpHeaders.authorizationHeader: _basic
       }, extra: {
         "noCache": true, //本接口禁用缓存
       }),
     );
-    print("--- login end");
+
+    print(r.headers);
     //登录成功后更新公共头（authorization），此后的所有请求都会带上用户身份信息
-    dio.options.headers[HttpHeaders.authorizationHeader] = basic;
+    dio.options.headers[HttpHeaders.authorizationHeader] = _basic;
     //清空所有缓存
     Global.netCache.cache.clear();
     //更新profile中的token信息
-    Global.profile.token = basic;
+    Global.profile.token = _basic;
     return User.fromJson(r.data);
   }
 
@@ -76,11 +78,20 @@ class Git {
       // 列表下拉刷新，需要删除缓存（拦截器中会读取这些信息）
       _options.extra.addAll({"refresh": true, "list": true});
     }
-    var r = await dio.get<List>(
-      "user/repos",
+    _options.merge(headers: {
+        HttpHeaders.authorizationHeader: _basic
+      });
+    print(dio.options.headers);
+    try{
+      var r = await dio.get<List>(
+      "users/xieyixingwei/repos",
       queryParameters: queryParameters,
       options: _options,
-    );
-    return r.data.map((e) => Repo.fromJson(e)).toList();
+      );
+      return r.data.map((e) => Repo.fromJson(e)).toList();
+    } catch(e) {
+      print("--- getRepos failed");
+      print(e.toString());
+    }
   }
 }
